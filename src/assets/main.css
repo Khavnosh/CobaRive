@@ -34,16 +34,6 @@ a,
   }
 }
 
-canvas {
-
-  pointer-events: none;
-  position: absolute;
-  right: 50px
-
-
-}
-
-
 
 .container {
   text-align: center;

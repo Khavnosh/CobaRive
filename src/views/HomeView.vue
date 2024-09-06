@@ -47,7 +47,7 @@ function playCube(){
 
 //Main Codes
 onMounted(() => {
-console.log("hi")
+console.log("hi tambah")
 console.log("halo ini evan yang tambah")
   const cubeRive = new rive.Rive({
     riveFile : file,

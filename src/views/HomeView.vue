@@ -15,6 +15,7 @@ import { ref, onMounted, useTemplateRef } from "vue";
 
 const stageNum = ref(1);
 
+
 async function loadRiveFile(src) {
   const file = new rive.RiveFile({
     src: src,

@@ -4,10 +4,8 @@
       <canvas id="canvas1" width="500" height="531"></canvas>
     </div>
     <button @click="activate">Activate (Cube)</button>
-    <button @click ="activateBox"> Activate (Box)</button>
     <button @click="stop">Stop</button>
     <button @click="switchFile">Switch to Box</button>
-    <button @click="switchBack">Switch to Cube</button>
   </main>
 </template>
 
@@ -48,14 +46,14 @@ const layout = new rive.Layout({
 
 //Main Codes
 function activate() {
+  if(cubeActive.value == true){
   activeBoolController.value = true;
-  
-  
-}
+  }
 
-function activateBox() {
+  else{
   boxBool.value = true;
     console.log(boxBool.value)
+  } 
 }
 
 function stop() {
@@ -64,6 +62,7 @@ function stop() {
 
 function switchFile() {
   //If the current animation is the cube
+  if(cubeActive.value == true){
     cubeActive.value = false;
     const riv_1 = setupRive(truckFile, canvas, "State Machine 1", "Artboard", () => {
     riv_1.resizeDrawingSurfaceToCanvas();
@@ -74,13 +73,10 @@ function switchFile() {
     
     })
     console.log(cubeActive.value);
+  }
 
-  
-  
-}
-
-function switchBack() {
-  cubeActive.value = true;
+  else if(cubeActive.value == false){
+    cubeActive.value = true;
     console.log("cubeActive has changed")
     const cubeRive = setupRive(cubeFile, canvas, "State Machine 1", "Artboard 2", () => {
     // Prevent a blurry canvas by using the device pixel ratio
@@ -92,7 +88,11 @@ function switchBack() {
     stageNumInside.value = stageNum.value;
     console.log(stageNum.value);
   });
-  console.log(cubeActive.value);
+  console.log(cubeActive);
+  }
+
+  
+  
 }
 
 let activeBoolController;

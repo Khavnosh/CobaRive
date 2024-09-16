@@ -83,6 +83,7 @@ function switchFile() {
     cubeRive.resizeDrawingSurfaceToCanvas();
     const inputs = cubeRive.stateMachineInputs("State Machine 1");
     activeBoolController = inputs.find((i) => i.name === "Activate");
+    
     console.log(activeBoolController.value);
     const stageNumInside = inputs.find((i) => i.name === "Stage");
     stageNumInside.value = stageNum.value;
